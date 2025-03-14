@@ -8,5 +8,5 @@
 /dataSources.local.xml
 /.idea/
 target/
-/test/
-/TaskJDBC.iml/
+test/
+TaskJDBC.iml/
