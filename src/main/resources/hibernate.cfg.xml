@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection properties -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/popa?serverTimezone=UTC</property>  <!-- Replace with your DB URL -->
+        <property name="hibernate.connection.username">root</property>            <!-- Replace with your DB username -->
+        <property name="hibernate.connection.password">daniil13261</property>         <!-- Replace with your DB password -->
+
+        <!-- JDBC connection pool settings -->
+        <property name="hibernate.connection.pool_size">10</property>
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>  <!-- or other dialect -->
+        <!-- Enable the automatic generation of database schema -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Show SQL queries in the console -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Annotated classes -->
+        <mapping class="jm.task.core.jdbc.model.User"/>
+    </session-factory>
+</hibernate-configuration>
