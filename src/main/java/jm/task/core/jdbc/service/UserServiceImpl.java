@@ -1,19 +1,33 @@
 package jm.task.core.jdbc.service;
 
+import jm.task.core.jdbc.dao.UserDao;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    UserDaoJDBCImpl userDao =  new UserDaoJDBCImpl();
+    UserDao userDao = new UserDaoJDBCImpl();
 
     public void createUsersTable()  {
-        userDao.createUsersTable();
+        try {
+            userDao.createUsersTable();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("Метод create из класса Service выполнен успешно");
     }
 
     public void dropUsersTable() {
-        userDao.dropUsersTable();
+        try {
+            userDao.dropUsersTable();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("Метод drop из класса Service выполнен успешно");
     }
 
