@@ -9,4 +9,4 @@
 /.idea/
 target/
 test/
-TaskJDBC.iml/
+*.iml/
